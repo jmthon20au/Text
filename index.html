@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات النصوص الاحترافية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>أدوات النصوص الاحترافية</h1>
+        <p class="description">مجموعة من الأدوات المتطورة لمعالجة وتحليل النصوص</p>
+
+        <div class="main-buttons">
+            <button class="nav-button" data-target="sentence-repeater"><i class="fas fa-repeat"></i> مكرر الجملة</button>
+            <button class="nav-button" data-target="word-repeater"><i class="fas fa-font"></i> مكرر الكلمات</button>
+            <button class="nav-button" data-target="text-analyzer"><i class="fas fa-chart-bar"></i> عداد وتحليل النصوص</button>
+        </div>
+
+        <div id="sentence-repeater" class="card tool-card hidden">
+            <h2><i class="fas fa-repeat"></i> مكرر الجملة</h2>
+            <div class="input-group">
+                <textarea id="sentenceInput" placeholder="أدخل الجملة هنا..." rows="3"></textarea>
+                <input type="number" id="sentenceCount" placeholder="عدد المرات" min="1" value="5">
+            </div>
+            <button class="main-action-btn" onclick="repeatSentence()"><i class="fas fa-play"></i> كرر</button>
+            <textarea id="repeatedSentenceOutput" readonly></textarea>
+            <button class="copy-btn" onclick="copyText('repeatedSentenceOutput')"><i class="fas fa-copy"></i> نسخ</button>
+        </div>
+
+        <div id="word-repeater" class="card tool-card hidden">
+            <h2><i class="fas fa-font"></i> مكرر الكلمات</h2>
+            <div class="input-group">
+                <input type="text" id="wordInput" placeholder="أدخل الكلمة هنا">
+                <input type="number" id="wordCount" placeholder="عدد المرات" min="1" value="10">
+            </div>
+            <button class="main-action-btn" onclick="repeatWord()"><i class="fas fa-play"></i> كرر</button>
+            <textarea id="repeatedWordOutput" readonly></textarea>
+            <button class="copy-btn" onclick="copyText('repeatedWordOutput')"><i class="fas fa-copy"></i> نسخ</button>
+        </div>
+
+        <div id="text-analyzer" class="card tool-card hidden">
+            <h2><i class="fas fa-chart-bar"></i> عداد وتحليل النصوص</h2>
+            <textarea id="textAnalyzerInput" placeholder="الصق أو اكتب النص هنا..."></textarea>
+            <div class="stats-container">
+                <div><i class="fas fa-file-alt"></i> الكلمات: <span id="wordCounter">0</span></div>
+                <div><i class="fas fa-quote-right"></i> الحروف: <span id="charCounter">0</span></div>
+                <div><i class="fas fa-list-ol"></i> الأرقام: <span id="numberCounter">0</span></div>
+                <div><i class="fas fa-paragraph"></i> الفقرات: <span id="paragraphCounter">0</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <button class="developer-btn" onclick="window.open('https://www.ali-altaee.free.nf', '_blank')"><i class="fas fa-code"></i> المطور</button>
+        <p>&copy;  2025  جميع الحقوق محفوظة Ali Altaee .</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
